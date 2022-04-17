@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import {nanoid} from 'nanoid'
 import {firebase} from '../firebase'
 
@@ -17,7 +17,7 @@ const Formulario = () => {
                  const data = await db.collection('frutas').get()
                  const arrayData= data.docs.map(item => (
                      {
-                         id:item.id, ... item.data()
+                         id:item.id, ...item.data()
                      }
                  ))
                  //console.log(arrayData)
@@ -56,7 +56,7 @@ const Formulario = () => {
             await db.collection('frutas').add(nuevaFruta)
 
             setListaFrutas([
-                ... listaFrutas,
+                ...listaFrutas,
                 {id:nanoid(), nombreFruta:fruta, nombreDescripcion:descripcion}
             ])
 
